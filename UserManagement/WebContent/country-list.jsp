@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<h1>NEU</h1>
+
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: grey">

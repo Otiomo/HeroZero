@@ -30,11 +30,7 @@
 			<c:if test="${country != null}">
 					<form action="update" method="post">
 				</c:if>
-				<c:if test="${country == null}">
-					<form action="insert" method="post">
-				</c:if>
-
-				
+							
 
 				<c:if test="${country != null}">
 					<input type="hidden" name="id" value="<c:out value='${country.id}' />" />
