@@ -1,4 +1,4 @@
-package com.xadmin.usermanagement.web;
+package com.web;
 
 import java.io.IOException;
 
@@ -10,24 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.xadmin.usermanagement.login.*;
-import com.xadmin.usermanagement.dao.*;
+import com.beans.*;
+import com.dao.*;
 
-/**
- * @email Ramesh Fadatare
- */
+
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private LoginDao loginDao;
+    private DAO loginDao;
 
     public void init() {
-        loginDao = new LoginDao();
+        loginDao = new DAO();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
+            throws ServletException, IOException {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -38,11 +36,9 @@ public class LoginServlet extends HttpServlet {
         try {
             if (loginDao.validate(loginBean)) {
                 HttpSession session = request.getSession();
-                session.setAttribute("username",username);
+                session.setAttribute("loggedInUsername", username); // Saving username as "loggedInUsername" in the HttpSession
                 response.sendRedirect("listedit");
             } else {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", username);
                 response.sendRedirect("login.jsp");
             }
         } catch (ClassNotFoundException e) {

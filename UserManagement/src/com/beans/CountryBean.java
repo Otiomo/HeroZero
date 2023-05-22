@@ -1,28 +1,31 @@
-package com.xadmin.usermanagement.model;
+package com.beans;
 
 
-public class Country {
-	protected int id;
-	protected String name;
-	protected float $2020;
-	protected float $2021;
-	protected float $2022;
+
+
+public class CountryBean  {
 	
-	public Country() {
+		protected int id;
+		protected String name;
+		protected float $2020;
+		protected float $2021;
+		protected float $2022;
+	
+	public CountryBean() {
 	}
-	public Country(String name, float $2022) {
+	public CountryBean(String name, float $2022) {
 		super();
 		this.name = name;
 		this.$2022 = $2022;
 	}
-	public Country(String name, float $2021, float $2022) {
+	public CountryBean(String name, float $2021, float $2022) {
 		super();
 		this.name = name;
 		this.$2021 = $2021;
 		this.$2022 = $2022;
 	}
 
-	public Country(String name, float $2020, float $2021, float $2022) {
+	public CountryBean(String name, float $2020, float $2021, float $2022) {
 		super();
 		this.name = name;
 		this.$2020 = $2020;
@@ -30,7 +33,7 @@ public class Country {
 		this.$2022 = $2022;
 	}
 
-	public Country(int id, String name, float $2020, float $2021, float $2022) {
+	public CountryBean(int id, String name, float $2020, float $2021, float $2022) {
 		super();
 		this.id = id;
 		this.name = name;

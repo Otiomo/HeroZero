@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@page import="com.xadmin.usermanagement.model.Country"%>
+	<%@page import="com.beans.CountryBean"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -20,7 +20,7 @@
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
 					class="nav-link">Data-List</a></li>
-					<li><a href="employeeregister.jsp" class="nav-link">Registration</a></li>
+					<li><a href="register.jsp" class="nav-link">Registration</a></li>
 					<li><a href="login.jsp" class="nav-link">Login</a></li>
 					
 			</ul>
@@ -28,11 +28,15 @@
 	</header>
 	<br>
 
+
+
 	<div class="row">
 		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
-			<h3 class="text-center"> From Hero to Zero</h3>
+			<h3 class="text-center"> Welcome ${loggedInUsername}!</h3>
+			<h3 class="text-center"> Höhe der CO2-Emissionen nach Ländern in Millionen Tonnen</h3>
+
 			
 			
 			<br>

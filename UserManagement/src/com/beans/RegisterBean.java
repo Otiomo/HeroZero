@@ -1,22 +1,26 @@
-package com.xadmin.usermanagement.login;
+package com.beans;
 
 import java.io.Serializable;
 
-/**
- * JavaBean class used in jsp action tags.
- * @author Ramesh Fadatare
- */
-public class Employee implements Serializable {
-    /**
-     * 
-     */
+
+
+public class RegisterBean implements Serializable {
+    
     private static final long serialVersionUID = 1L;
-    private String firstName;
+    private int ide;
+	private String firstName;
     private String lastName;
     private String username;
     private String password;
     private String address;
     private String email;
+    
+    public int getIde() {
+		return ide;
+	}
+	public void setIde(int ide) {
+		this.ide = ide;
+	}
     public String getFirstName() {
         return firstName;
     }

@@ -1,4 +1,4 @@
-package com.xadmin.usermanagement.web;
+package com.web;
 
 import java.io.IOException;
 
@@ -8,20 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.xadmin.usermanagement.dao.*;
-import com.xadmin.usermanagement.login.*;
+import com.beans.*;
+import com.dao.DAO;
 
-/**
- * @email Ramesh Fadatare
- */
+
 
 @WebServlet("/register")
-public class EmployeeServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private EmployeeDao employeeDao;
+    private DAO registerDao;
 
     public void init() {
-        employeeDao = new EmployeeDao();
+        registerDao = new DAO();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -34,7 +32,7 @@ public class EmployeeServlet extends HttpServlet {
         String address = request.getParameter("address");
         String email = request.getParameter("email");
 
-        Employee employee = new Employee();
+        RegisterBean employee = new RegisterBean();
         employee.setFirstName(firstName);
         employee.setLastName(lastName);
         employee.setUsername(username);
@@ -43,12 +41,11 @@ public class EmployeeServlet extends HttpServlet {
         employee.setAddress(address);
 
         try {
-            employeeDao.registerEmployee(employee);
+            registerDao.registerEmployee(employee);
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        response.sendRedirect("employeedetails.jsp");
+        response.sendRedirect("registersuccess.jsp");
     }
 }
